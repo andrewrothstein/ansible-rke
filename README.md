@@ -1,8 +1,8 @@
-andrewrothstein.rolename
+andrewrothstein.rke
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-rolename.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-rolename)
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-rke.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-rke)
 
-A brief description of the andrewrothstein.rolename goes here.
+Installs [RKE](https://github.com/rancher/rke)
 
 Requirements
 ------------
@@ -25,7 +25,7 @@ Example Playbook
 ```yml
 - hosts: servers
   roles:
-    - andrewrothstein.rolename
+    - andrewrothstein.rke
 ```
 
 License
