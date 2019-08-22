@@ -22,7 +22,6 @@ rke_checksums:
     linux-amd64: sha256:0a2edad2d17f4734e4aa5bc005d94c760dc3b8f7519564b46723e8860dbe415a
     # https://github.com/rancher/rke/releases/download/v0.2.8/rke_linux-arm
     linux-arm: sha256:77f43928f5b40e920ac3c0113e79002d83f4bf001a94a30ac1655e1ba3432220
-    f6b29b243b7d83b370a1ed2b465e02144b485208bc730198cc155448155a87be-: sha256:
     # https://github.com/rancher/rke/releases/download/v0.2.8/rke_linux-arm64
     linux-arm64: sha256:f6b29b243b7d83b370a1ed2b465e02144b485208bc730198cc155448155a87be
     # https://github.com/rancher/rke/releases/download/v0.2.8/rke_darwin-amd64
