@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
-VER=v0.2.4
+VER=v0.2.8
 DIR=~/Downloads
 MIRROR=https://github.com/rancher/rke/releases/download/$VER
-LCHECKSUMS=$DIR/rke-checksums-$ver.txt
+LCHECKSUMS=$DIR/rke-checksums-$VER.txt
 
 if [ ! -e $LCHECKSUMS ]
 then
