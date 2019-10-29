@@ -1,33 +1,36 @@
 #!/usr/bin/env sh
-VER=v0.2.8
 DIR=~/Downloads
-MIRROR=https://github.com/rancher/rke/releases/download/$VER
-LCHECKSUMS=$DIR/rke-checksums-$VER.txt
-
-if [ ! -e $LCHECKSUMS ]
-then
-    wget -q -O $LCHECKSUMS $MIRROR/sha256sum.txt
-fi
 
 dl()
 {
-    OS=$1
-    PLATFORM=$2
-    SUFFIX=${3:-}
+    local mirror=$1
+    local lchecksums=$2
+    local os=$3
+    local arch=$4
+    local suffix=${5-}
+    local file=rke_${os}-${arch}${suffix}
+    local url=$mirror/$file
 
-    FILE=rke_$OS-$PLATFORM$SUFFIX
-    URL=$MIRROR/$FILE
-
-    printf "    # %s\n" $URL
-    printf "    %s-%s: sha256:%s\n" $OS $PLATFORM `fgrep $FILE $LCHECKSUMS | awk '{print $1}'`
+    printf "    # %s\n" $url
+    printf "    %s-%s: sha256:%s\n" $os $arch `egrep -e "$file\$" $lchecksums | awk '{print $1}'`
 }
 
-printf "  %s:\n" $VER
-dl linux amd64
-dl linux arm
-dl linux arm64
-dl darwin amd64
-dl windows 386 .exe
-dl windows amd64 .exe
+dl_ver () {
+    local ver=$1
+    local mirror=https://github.com/rancher/rke/releases/download/$ver
+    local lchecksums=$DIR/rke-checksums-${ver}.txt
+    if [ ! -e $lchecksums ]
+    then
+        wget -q -O $lchecksums $mirror/sha256sum.txt
+    fi
 
+    printf "  %s:\n" $ver
+    dl $mirror $lchecksums linux amd64
+    dl $mirror $lchecksums linux arm
+    dl $mirror $lchecksums linux arm64
+    dl $mirror $lchecksums darwin amd64
+    dl $mirror $lchecksums windows 386 .exe
+    dl $mirror $lchecksums windows amd64 .exe
+}
 
+dl_ver ${1:-v0.3.2}
