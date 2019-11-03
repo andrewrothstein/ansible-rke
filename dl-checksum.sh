@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 DIR=~/Downloads
+APP=rke
 
 dl()
 {
@@ -8,7 +9,7 @@ dl()
     local os=$3
     local arch=$4
     local suffix=${5-}
-    local file=rke_${os}-${arch}${suffix}
+    local file=${APP}_${os}-${arch}${suffix}
     local url=$mirror/$file
 
     printf "    # %s\n" $url
@@ -17,8 +18,8 @@ dl()
 
 dl_ver () {
     local ver=$1
-    local mirror=https://github.com/rancher/rke/releases/download/$ver
-    local lchecksums=$DIR/rke-checksums-${ver}.txt
+    local mirror=https://github.com/rancher/${APP}/releases/download/$ver
+    local lchecksums=$DIR/${APP}-checksums-${ver}.txt
     if [ ! -e $lchecksums ]
     then
         wget -q -O $lchecksums $mirror/sha256sum.txt
