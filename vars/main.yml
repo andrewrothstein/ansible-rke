@@ -5,3 +5,5 @@ rke_remote_exe: rke_{{ rke_platform }}{{ rke_exe_suffix | default("") }}
 rke_url: '{{ rke_mirror }}/{{ rke_ver }}/{{ rke_remote_exe }}'
 rke_checksum: '{{ rke_checksums[rke_ver][rke_platform] }}'
 rke_local_exe: rke_{{ rke_ver }}
+rke_installed_exe: '{{ rke_install_dir }}/{{ rke_local_exe }}'
+rke_link: '{{ rke_install_dir }}/rke'
