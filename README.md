@@ -1,6 +1,6 @@
 andrewrothstein.rke
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-rke.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-rke)
+![Build Status](https://github.com/andrewrothstein/ansible-rke/actions/workflows/build.yml/badge.svg)
 
 Installs [RKE](https://github.com/rancher/rke)
 
