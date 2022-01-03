@@ -1,6 +1,6 @@
 ---
 # defaults file for rke
-rke_ver: v1.3.2
+rke_ver: v1.3.3
 rke_mirror: https://github.com/rancher/rke/releases/download
 rke_os: linux
 rke_arch: amd64
@@ -435,3 +435,16 @@ rke_checksums:
     windows-386: sha256:96560aa7a9003025fb7821aa5297f70b43769319a51d5f229edf4291e8e89b14
     # https://github.com/rancher/rke/releases/download/v1.3.2/rke_windows-amd64.exe
     windows-amd64: sha256:6af545b8a0f0c4e2bb710beae33d0f1c3da0525fa7a8a6efdfe5b2495e759394
+  v1.3.3:
+    # https://github.com/rancher/rke/releases/download/v1.3.3/rke_linux-amd64
+    linux-amd64: sha256:61088847d80292f305e233b7dff4ac8e47fefdd726e5245052450bf05da844aa
+    # https://github.com/rancher/rke/releases/download/v1.3.3/rke_linux-arm
+    linux-arm: sha256:dad1030a3065607660d31aac5f8245c2ae1078ab051cd4a134a0fe78313a5ee4
+    # https://github.com/rancher/rke/releases/download/v1.3.3/rke_linux-arm64
+    linux-arm64: sha256:9650082c93f92bc4a42b609253077e344958b007ccce65177db4d30cca4f8287
+    # https://github.com/rancher/rke/releases/download/v1.3.3/rke_darwin-amd64
+    darwin-amd64: sha256:6d82b4ef1ea43e3b5d73a075118ff4074098e30b14378acb2626b84bd70fc0d5
+    # https://github.com/rancher/rke/releases/download/v1.3.3/rke_windows-386.exe
+    windows-386: sha256:50a24716a1286b311d1fdf0d9018c4dcf4f16cecb699d7bfa232c2f99bcb8c96
+    # https://github.com/rancher/rke/releases/download/v1.3.3/rke_windows-amd64.exe
+    windows-amd64: sha256:d856e075c29e3a1a13a998c96736c88222cfed726c2f2048247d1bc23e67952b
