@@ -22,7 +22,7 @@ dl_ver () {
     local lchecksums=$DIR/${APP}-checksums-${ver}.txt
     if [ ! -e $lchecksums ]
     then
-        wget -q -O $lchecksums $mirror/sha256sum.txt
+        curl -sSLf -o $lchecksums $mirror/sha256sum.txt
     fi
 
     printf "  %s:\n" $ver
@@ -34,4 +34,4 @@ dl_ver () {
     dl $mirror $lchecksums windows amd64 .exe
 }
 
-dl_ver ${1:-v1.3.4}
+dl_ver ${1:-v1.3.6}
