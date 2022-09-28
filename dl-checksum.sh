@@ -34,4 +34,6 @@ dl_ver () {
     dl $mirror $lchecksums windows amd64 .exe
 }
 
-dl_ver ${1:-v1.3.12}
+dl_ver v1.3.13
+dl_ver v1.3.14
+dl_ver ${1:-v1.3.15}

@@ -10,7 +10,7 @@
       paths:
         - '{{ role_path }}/vars'
 - name: downloading {{ rke_url }} to {{ rke_installed_exe }}
-  become: yes
+  become: true
   become_user: root
   get_url:
     url: '{{ rke_url }}'
@@ -18,7 +18,7 @@
     checksum: '{{ rke_checksum }}'
     mode: 0755
 - name: linking {{ rke_link }} to {{ rke_installed_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ rke_installed_exe }}'

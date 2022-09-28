@@ -1,5 +1,7 @@
 ---
 # vars file for rke
+rke_os: '{{ ansible_system | lower }}'
+rke_arch: '{{ rke_arch_map[ansible_architecture] }}'
 rke_platform: '{{ rke_os }}-{{ rke_arch }}'
 rke_remote_exe: rke_{{ rke_platform }}{{ rke_exe_suffix | default("") }}
 rke_url: '{{ rke_mirror }}/{{ rke_ver }}/{{ rke_remote_exe }}'
